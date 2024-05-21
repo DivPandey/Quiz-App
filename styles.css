@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: lightSkyBlue;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.play-button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    color: #007BFF;
+    /* Text color */
+    background-color: white;
+    /* Background color */
+    border: 2px solid #007BFF;
+    /* Border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Added transition for box-shadow */
+}
+
+.play-button:hover {
+    background-color: white;
+    /* Ensure background color doesn't change on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Box shadow on hover */
+}
+
+/* Styles for quiz.html */
+.quiz-container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.question {
+    font-size: 2em;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.option-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.option:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.option-seq {
+    background-color: lightSkyBlue;
+    color: black;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.option-text {
+    flex-grow: 1;
+}
+
+/* Media Query */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .play-button {
+        font-size: 1.2em;
+        padding: 8px 16px;
+    }
+
+    .question {
+        font-size: 1.5em;
+    }
+
+    .option-seq {
+        padding: 8px;
+        font-size: 1em;
+    }
+
+    .option-text {
+        font-size: 1em;
+    }
+}
+
+.container-endpage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.5vh 6vw;
+    font-size: 1.2em;
+    background-color: white;
+    color: #4a90e2;
+    text-decoration: none;
+    border: 2px solid #4a90e2;
+    border-radius: 5px;
+    transition: 0.2s;
+    margin-bottom: 15px;
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 5px 0px #4a90e2 ;
+}
