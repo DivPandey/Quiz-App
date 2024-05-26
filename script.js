@@ -44,8 +44,8 @@ let option3 = document.getElementsByClassName('option-text')[2];
 let option4 = document.getElementsByClassName('option-text')[3];
 
 let question = document.getElementsByClassName('question')[0];
-let scorenumber = document.getElementsByClassName('scorenumber')[0];
-let questioncounter = document.getElementsByClassName('questioncount')[0];
+let scorenumber = document.getElementsByClassName('scoreCount')[0];
+let questioncounter = document.getElementsByClassName('question-seq')[0];
 let currentQuestion = 0;
 let score = 0;
 let options = document.getElementsByClassName('option');
@@ -73,6 +73,9 @@ Array.from(options).forEach(option => {
         currentQuestion++;
         if (option.id == questions[currentQuestion-1].answer) {
             option.style.backgroundColor = 'green';
+            score+=10;
+            scorenumber.innerText = score;
+            localStorage.setItem('scoreOverview',score);
         }
         else {
             option.style.backgroundColor = 'red';
@@ -80,6 +83,7 @@ Array.from(options).forEach(option => {
         if (currentQuestion < AllQuestions) {
             setTimeout(() => {
                 loadQuestion(currentQuestion);
+                questioncounter.innerText=`${currentQuestion+1}/${AllQuestions}`;
                 option.style.backgroundColor = 'white';
                 isSelected = false;
             }, 2000);

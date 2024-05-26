@@ -1,5 +1,5 @@
-let score = localStorage.getItem('score');
-if(!score){
-    score = 0;
+let endScore = localStorage.getItem('ScoreOverview');
+if(!endScore){
+    endScore = 0;
 }
-document.getElementsByClassName('score')[0].innerText = score;
+document.getElementsByClassName('total-score')[0].innerText = endScore;
