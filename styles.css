@@ -51,6 +51,7 @@ h1 {
 }
 
 .question {
+    width: 50vw;
     font-size: 2em;
     color: black;
     margin-bottom: 20px;
@@ -155,4 +156,27 @@ b{
 .scoreCount{
     font-size: 4vw;
     color: #4a90e2;
+}
+
+.uncoloured{
+    height: 100%;
+}
+.coloured{
+    height: 100%;
+    background-color: #4a90e2;
+    width: 0%;
+}
+.progress-bar{
+    height: 50%;
+    width: 100%;
+    border: 4px solid #4a90e2;
+}
+.question-section{
+    width: 30%;
+}
+.questionOverview{
+    display: flex;
+    justify-content: space-evenly;
+    width:100%;
+    margin-bottom: 7%;
 }

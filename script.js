@@ -51,6 +51,7 @@ let score = 0;
 let options = document.getElementsByClassName('option');
 questions = shuffle(questions);
 let AllQuestions = questions.length;
+let Filled = document.getElementsByClassName('coloured')[0];
 
 function loadQuestion(questionindex) {
     let q = questions[questionindex];
@@ -66,6 +67,7 @@ function loadQuestion(questionindex) {
 
 loadQuestion(currentQuestion);
 let isSelected = false;
+Filled.style.width = `${(currentQuestion + 1) / AllQuestions * 100}%`;
 Array.from(options).forEach(option => {
     option.addEventListener('click', () => {
         if (isSelected) return;
@@ -84,6 +86,7 @@ Array.from(options).forEach(option => {
             setTimeout(() => {
                 loadQuestion(currentQuestion);
                 questioncounter.innerText=`${currentQuestion+1}/${AllQuestions}`;
+                Filled.style.width = `${(currentQuestion + 1) / AllQuestions * 100}%`;
                 option.style.backgroundColor = 'white';
                 isSelected = false;
             }, 2000);
