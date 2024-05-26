@@ -1,4 +1,4 @@
-let endScore = localStorage.getItem('ScoreOverview');
+let endScore = localStorage.getItem('score');
 if(!endScore){
     endScore = 0;
 }

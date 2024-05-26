@@ -77,7 +77,7 @@ Array.from(options).forEach(option => {
             option.style.backgroundColor = 'green';
             score+=10;
             scorenumber.innerText = score;
-            localStorage.setItem('scoreOverview',score);
+            localStorage.setItem('score',score);
         }
         else {
             option.style.backgroundColor = 'red';

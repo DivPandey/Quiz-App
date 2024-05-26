@@ -150,8 +150,9 @@ b{
     font-size: 1.6vw;
 }
 .question-seq{
-    font-size: 4vw;
-    color: #4a90e2;
+    font-size: 1.6vw;
+    font-weight: bold;
+    
 }
 .scoreCount{
     font-size: 4vw;
@@ -179,4 +180,12 @@ b{
     justify-content: space-evenly;
     width:100%;
     margin-bottom: 7%;
+}
+.total-score{
+    font-size: 3vw;
+    color: #1674e0;
+    margin-bottom: 8vh;
+}
+.container-endpage{
+    width: 25vw;
 }
