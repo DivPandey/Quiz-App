@@ -24,6 +24,20 @@ let questions = [
         answer: 2,
     },
 ];
+
+function shuffle(Array) {
+    let curr = Array.length;
+    let random;
+    while (curr != 0) {
+        random = Math.floor(Math.random() * curr);
+        curr--;
+        let temp = Array[curr];
+        Array[curr] = Array[random];
+        Array[random] = temp;
+    }
+    return questions;
+}
+
 let option1 = document.getElementsByClassName('option-text')[0];
 let option2 = document.getElementsByClassName('option-text')[1];
 let option3 = document.getElementsByClassName('option-text')[2];
@@ -34,9 +48,10 @@ let scorenumber = document.getElementsByClassName('scorenumber')[0];
 let questioncounter = document.getElementsByClassName('questioncount')[0];
 let currentQuestion = 0;
 let score = 0;
-// let options = document.getElementsByClassName('option')
-shuffle(questions);
-loadQuestion(0);
+let options = document.getElementsByClassName('option');
+questions = shuffle(questions);
+let AllQuestions = questions.length;
+
 function loadQuestion(questionindex) {
     let q = questions[questionindex];
     option1.innerText = q.choice1;
@@ -47,32 +62,26 @@ function loadQuestion(questionindex) {
     question.innerText = q.question;
 }
 
-function shuffle(questions) {
-    let curr = questions.length;
-    while (curr != 0) {
-        let random = Math.floor(Math.random() * curr);
-        curr--;
-        let temp = questions[curr];
-        questions[curr] = questions[random];
-        questions[random] = temp;
-    }
-}
 
-let questionindex = 0;
-let options = document.getElementsByClassName('option');
+
+loadQuestion(currentQuestion);
+let isSelected = false;
 Array.from(options).forEach(option => {
     option.addEventListener('click', () => {
-        if (option.id == questions[questionindex].answer) {
+        if (isSelected) return;
+        isSelected = true;
+        currentQuestion++;
+        if (option.id == questions[currentQuestion-1].answer) {
             option.style.backgroundColor = 'green';
         }
         else {
             option.style.backgroundColor = 'red';
         }
-        questionindex++;
-        if (questionindex < questions.length) {
+        if (currentQuestion < AllQuestions) {
             setTimeout(() => {
+                loadQuestion(currentQuestion);
                 option.style.backgroundColor = 'white';
-                loadQuestion(questionindex);
+                isSelected = false;
             }, 2000);
         } else {
             setTimeout(() => {
