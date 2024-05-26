@@ -64,6 +64,7 @@ h1 {
 
 .option {
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     background-color: white;
@@ -137,4 +138,21 @@ h1 {
 
 .btn:hover {
     box-shadow: 0px 0px 5px 0px #4a90e2 ;
+}
+
+.quiz-board{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+}
+b{
+    font-size: 1.6vw;
+}
+.question-seq{
+    font-size: 4vw;
+    color: #4a90e2;
+}
+.scoreCount{
+    font-size: 4vw;
+    color: #4a90e2;
 }
